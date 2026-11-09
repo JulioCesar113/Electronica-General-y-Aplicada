@@ -31,18 +31,16 @@ void loop() {
     if (sscanf(mensaje.c_str(), "%c, %c, %d", &x, &y, &vel) == 3) {
       aplicarMovimiento(x, y, vel);
     }
-     if (mensaje == 3) {
-
-      Serial.print("Eje X: "); Serial.println(x);
-
-      Serial.print("Eje Y: "); Serial.println(y);
-
-      Serial.print("Velocidad: "); Serial.println(vel);
-
-      Serial.println("-----------------");
-  }
+     int datosLeidos = sscanf(mensaje.c_str(), "%c, %c, %d", &x, &y, &vel);
+if (datosLeidos == 3) {
+  aplicarMovimiento(x, y, vel);
+  Serial.print("Eje X: "); Serial.println(x);
+  Serial.print("Eje Y: "); Serial.println(y);
+  Serial.print("Velocidad: "); Serial.println(vel);
+  Serial.println("-----------------");
 }
-
+}
+}
 void aplicarMovimiento(char x, char y, int vel) {
   // 1. Control del eje Y (Avance y Retroceso)
   if (y == 'F') { // Adelante
