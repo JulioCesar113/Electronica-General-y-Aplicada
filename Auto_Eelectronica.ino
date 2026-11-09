@@ -33,6 +33,7 @@ void loop() {
     }
      int datosLeidos = sscanf(mensaje.c_str(), "%c, %c, %d", &x, &y, &vel);
 if (datosLeidos == 3) {
+  vel = map(vel, 0, 100, 0, 255);
   aplicarMovimiento(x, y, vel);
   Serial.print("Eje X: "); Serial.println(x);
   Serial.print("Eje Y: "); Serial.println(y);
