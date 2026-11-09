@@ -6,7 +6,7 @@ import time
 estado = {
     'x': 'N',
     'y': 'N',
-    'vel': 150
+    'vel': 75
 }
 try:
 # Conexión al puerto
@@ -95,7 +95,7 @@ ventana.configure(bg="#2b2b2b")
 ventana.protocol("WM_DELETE_WINDOW", al_cerrar)
 
 # Deslizador de Velocidad
-slider_vel = tk.Scale(ventana, from_=0, to=255, orient='horizontal', 
+slider_vel = tk.Scale(ventana, from_=0, to=100, orient='horizontal', 
                       label="Velocidad (PWM)", bg="#2b2b2b", fg="white", 
                       highlightthickness=0)
 slider_vel.set(estado['vel'])
