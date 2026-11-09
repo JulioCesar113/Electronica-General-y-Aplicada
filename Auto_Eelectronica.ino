@@ -65,9 +65,9 @@ void aplicarMovimiento(char x, char y, int vel) {
   int pwmIzq = vel;
   int pwmDer = vel;
 
-  if (x == 'L') {
+  if (x == 'R') {
     pwmIzq = 0; 
-  } else if (x == 'R') {
+  } else if (x == 'L') {
     pwmDer = 0; 
   }
 
