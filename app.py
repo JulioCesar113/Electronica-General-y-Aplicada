@@ -1,5 +1,6 @@
 import tkinter as tk
 import serial
+import time
 
 # Agrupamos las variables en un diccionario (sin la 't')
 estado = {
@@ -10,7 +11,8 @@ estado = {
 try:
 # Conexión al puerto
     try:
-        arduino = serial.Serial('COM6', 9600, timeout=1)
+        arduino = serial.Serial('COM7', 9600, timeout=1)
+        time.sleep(3)
         conexion = True
     except Exception as e:
         print(f"Error al conectar con Arduino: {e}")
